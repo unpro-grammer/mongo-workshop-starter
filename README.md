@@ -1,0 +1,1 @@
+# WDCC MongoDB / Deployments Workshop - Starter project
