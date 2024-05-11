@@ -2,6 +2,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+import mongoose from "mongoose";
+
 import express from "express";
 import cors from "cors";
 
@@ -19,6 +21,9 @@ app.use(express.static("public"));
 // Import and use our application routes.
 import routes from "./routes/routes.js";
 app.use("/", routes);
+
+// Connect to database
+await mongoose.connect(process.env.DB_URL);
 
 // Start the server.
 app.listen(PORT, () => console.log(`App server listening on port ${PORT}!`));
